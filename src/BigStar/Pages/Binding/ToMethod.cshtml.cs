@@ -5,8 +5,10 @@ namespace BigStar.Pages.Binding
 {
     public class ToMethodModel : PageModel
     {
-        public void OnGet()
+        public string Message { get; set; } = "No message.";
+        public void OnGet(BigStar.Models.CollectibleCard currentCard)
         {
+            Message = $"The {currentCard.CardName} card is in {currentCard.Condition}";
         }
     }
 }
