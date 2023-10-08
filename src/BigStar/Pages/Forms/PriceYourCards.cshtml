@@ -5,10 +5,13 @@
 
 <form method="post">
     <label asp-for="Card.CardCount"></label>
-    <input type="number" asp-for="Card.CardCount">
+    <input type="number" asp-for="Card.CardCount" />
+
+    @* <label asp-for="Card.CardName"></label>
+    <input type="text" asp-for="Card.CardName" /> *@
 
     <label>Card</label>
-    <select>
+    <select asp-items="@Model.CardItems" asp-for="@Model.CardName">
         <option>Select Card</option>
     </select>
 
@@ -22,4 +25,5 @@
     <div>
         @Model.Message
     </div>
+
 </form>
